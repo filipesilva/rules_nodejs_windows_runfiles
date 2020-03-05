@@ -8,6 +8,8 @@
         "@bazel/buildifier": "latest"
     },
     "scripts": {
+        "version": "bazelisk version",
+        "example": "bazelisk run :example --enable_runfiles",
         "build": "bazelisk build //...",
         "test": "bazelisk test //..."
     }
