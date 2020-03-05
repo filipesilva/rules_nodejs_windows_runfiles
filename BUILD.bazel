@@ -1,0 +1,15 @@
+# Add rules here to build your software
+# See https://docs.bazel.build/versions/master/build-ref.html#BUILD_files
+
+
+load("@build_bazel_rules_nodejs//:index.bzl", "nodejs_binary")
+
+nodejs_binary(
+    name = "example",
+    data = [
+        "@//:node_modules",
+        "main.js",
+    ],
+    entry_point = ":main.js",
+    args = ["--node_options=--expose-gc"],
+)
